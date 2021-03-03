@@ -1,0 +1,20 @@
+
+@import "mixin";
+
+.footer{
+    background-color: $font-color;
+    height: 40px;
+    &-wrap{
+
+        @include wrapSp;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        small{
+
+            color: $font-color2;
+        }
+    }
+
+}

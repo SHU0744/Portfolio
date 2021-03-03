@@ -1,0 +1,246 @@
+
+@import "mixin";
+
+.header {
+    background-color: $font-color;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 56px;
+        @include media768 {
+            height: 80px;
+        }
+
+    .animebg2 {
+    position: absolute;
+    width: 100%;
+    height:56px;
+    background-color: $font-color;
+    transition: all 0.2s;
+    z-index: 999;
+        @include media768{
+        height: 80px;
+        }
+    }
+
+    .animebg2.load {
+    width: 0%;
+    }
+
+    &-wrap{
+        @include wrapSp;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        @include media960{
+            @include wrapPC;
+        }
+
+        .first {
+            text-decoration: none;
+        }
+
+        h1 {
+            color: $font-color2;
+            font-size: (18rem/16);
+            font-weight: 400;
+            font-family: 'Roboto';
+
+            @include media768 {
+                font-size: (24rem/16);
+            }
+        }
+
+//ドロワー
+        .hamburger{
+
+            display: inline-block;
+            text-decoration: none;
+            appearance: none;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            outline: none;
+            transition: all .3s ease-in-out;
+                @include media768{
+                display: none;
+            }
+        }
+
+        .hamburger.active{
+
+            display: inline-block;
+            text-decoration: none;
+            appearance: none;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            position: fixed;
+            top: 16px;
+            right: 30px;
+            z-index: 5;
+            border: 1px solid $color01;
+            box-shadow: 0 0 2rem transparent;
+            width: 40px;
+            height: 40px;
+            outline: none;
+            transition: all .3s ease-in-out;
+                @include media768{
+                display: none;
+            }
+
+        }
+
+
+
+
+
+        .hambur-line {
+            display: inline-block;
+            background-color: #fff;
+            width: 20px;
+            height: 2px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            transition: inherit;
+        }
+
+
+        .hambur-line::before,
+        .hambur-line::after{
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color:#fff;
+            transition: inherit;
+            content:"";
+        }
+
+        .hambur-line::before {
+            top: -8px;
+
+
+        }
+
+        .hambur-line::after {
+            top: 8px;
+        }
+
+
+        //後ろの背景
+        .drawer-background {
+            position: fixed;
+            z-index: 3;
+            width: 100vw;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+            visibility: hidden;
+            opacity: 0;
+          }
+
+
+
+
+          .hamburger[aria-expanded="true"] .hambur-line {
+            background-color: transparent;
+            &::before,
+            &::after {
+            top: 0;
+            background-color: $color02;
+          }
+        }
+
+
+        .hamburger[aria-expanded="true"] .hambur-line::before {
+            -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+          }
+
+          .hamburger[aria-expanded="true"] .hambur-line::after {
+            -webkit-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+          }
+
+          .sp-global-menu {
+            position: fixed;
+            z-index: 4;
+            width: 250px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+            transform: translateX(250px);
+            transition: 0.3s;
+          }
+
+        .navSp{
+            margin-top: 64px;
+
+            ul {
+
+                li{
+                    list-style: none;
+                    text-align: center;
+                    margin-bottom: 48px;
+                }
+                a {
+                    text-decoration: none;
+                    color: $font-color2;
+                    font-size: (18rem/16);
+                    font-family: 'Roboto';
+                    transition: all 0.4s;
+                }
+            }
+        }
+
+        .navPC {
+            display: none;
+
+            @include media768 {
+                display: block;
+                ul {
+                    display: flex;
+                }
+                li {
+                    list-style-type: none;
+                    margin-left: 60px;
+                }
+                a {
+                    text-decoration: none;
+                    color: $font-color2;
+                    font-size: (18rem/16);
+                    font-family: 'Roboto';
+                    transition: all 0.4s;
+                    &:hover{
+                        opacity: 0.6;
+                    }
+                }
+            }
+
+
+
+        }
+
+    }
+
+}
