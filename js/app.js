@@ -65,7 +65,7 @@ const table = [
         lang: 'HTML5 ・CSS3(Sass) ・Javascript(jquery) ・slick',
         kikan: '10日間',
         url: 'https://www.figma.com/file/7u2cea0rFQbPBtCvRgNvxj/LP-%E5%85%B1%E6%9C%89%E7%94%A8?node-id=0%3A1',
-        Github: 'https://github.com/SHU0744/MARKLARY.git'
+        Github: 'https://github.com/SHU0744/MARKRARY.git'
     },
 
     {
